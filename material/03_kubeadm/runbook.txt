@@ -1,0 +1,10 @@
+# RUNBOOK KUBEADM - SIMULACION (NO ejecutar)
+# Objetivo: pasar de 1.36.x a 1.37.x, una minor a la vez.
+# Orden defectuoso:
+1 | kubectl uncordon worker-1
+2 | kubeadm upgrade node
+3 | systemctl restart kubelet
+4 | kubectl drain worker-1 --ignore-daemonsets
+5 | kubeadm upgrade apply v1.37.x
+6 | kubeadm upgrade plan
+# El binario kubeadm aún no se ha actualizado.

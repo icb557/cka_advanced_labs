@@ -1,0 +1,7 @@
+SIMULACION: journalctl -u kubelet -n 80
+kubelet: Error syncing pod, skipping: failed to start container kube-apiserver
+kube-apiserver: Error: unknown flag: --definitely-not-a-real-apiserver-flag
+kubelet: Back-off restarting failed container kube-apiserver
+SIMULACION: crictl ps -a
+CONTAINER          STATE      NAME
+f1a17              Exited     kube-apiserver
